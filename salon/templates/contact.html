@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Snip Snap Luxury Salon</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <link href="/static/images/logo.png" rel="icon">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="/static/lib/animate/animate.min.css" rel="stylesheet">
+        <link href="/static/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="/static/lib/flaticon/font/flaticon.css" rel="stylesheet">
+        <link href="/static/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+        <link href="/static/css/admin2.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <img src="/static/images/logo.png" alt="">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse">
+                <ul class="nav nav-tabs">
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'admin_panel' %}">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'pending_bookings' %}">Total Bookings</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'accepted_bookings' %}" >Accepted Bookings</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'rejected_bookings' %}">Rejected Bookings</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link  active" aria-current="page" id="contact" href="{% url 'contact_review' %}">Review</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        <div class="row">
+            <div class="col">
+                <div class="col-md">
+                    <div class="card text-center text-white mb-3" id="contact review">
+                        <div class="card-header" id="contact">
+                            <h5 class="card-title">
+                                Review's
+                            </h5>
+                        </div>
+                        <table class="table">
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Subject</th>
+                                <th>Message</th>
+                                <th>Time</th>
+                            </tr>
+                            {% for i in contact %}
+                            <tr>
+                                <td>{{ i.name}}</td>
+                                <td>{{ i.email}}</td>
+                                <td>{{ i.subject}}</td>
+                                <td>{{ i.message}}</td>
+                                <td>{{ i.added_on}}</td>
+                            </tr>
+                            {% endfor %}
+                            
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </body>
+</html>
+            

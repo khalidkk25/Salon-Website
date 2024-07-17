@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+
+{% if message %}
+
+<script>
+    alert('{{message}}');
+</script>
+
+{% endif %}
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Snip Snap Luxury Salon</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <link href="/static/images/logo.png" rel="icon">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+        <link href="/static/lib/animate/animate.min.css" rel="stylesheet">
+        <link href="/static/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="/static/lib/flaticon/font/flaticon.css" rel="stylesheet">
+        <link href="/static/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+        <link href="/static/css/admin1.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="container" id="signin">
+            <img src="/static/images/logo.png" alt="">
+            <h1 class="form-title">Sign in</h1>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="uName" id="uName" placeholder="Username" required="required">
+                    <label for="uName">Username</label>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="uPwd" id="uPwd" required="required">
+                    <label for="uPwd">Password</label>
+                </div>
+                <input type="submit" class="btn" value="Sign In" name="signIn">
+            </form>
+
+            {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+    </body>
+</html>
+            

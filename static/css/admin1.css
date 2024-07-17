@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #fff;
+    width: 450px;
+    padding: 1.5rem;
+    margin: 50px auto;
+    border-radius: 10px;
+    box-shadow: 0 20px 35px rgba(0,0,1,0.9);
+}
+
+form a{
+    float: right;
+    margin: 25px;
+}
+
+.container img{
+    width: 35%;
+    margin-left: 125px;
+}
+
+.form-title{
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+    padding: 1.3rem;
+    margin-bottom: 0.4rem;
+    text-transform: uppercase;
+}
+
+input{
+    color: inherit;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px sollid #757575;
+    padding-left: 1.5rem;
+    font-size: 15px;
+}
+
+.input-group{
+    padding: 1% 0;
+    position: relative;
+}
+
+.input-group i{
+    position: absolute;
+    color: black;
+}
+
+input:focus{
+    background-color: transparent;
+    outline: transparent;
+    border-bottom: 2px solid #fbaf32;
+
+}
+
+input::placeholder{
+    color: transparent;
+}
+
+label{
+    color: #00000000;
+    position: relative;
+    left: 1.2em;
+    top: -1.7em;
+    cursor: auto;
+    transition: 0.3s ease all;
+}
+
+input:focus~label,input:not(:placeholder-shown){
+    top: -3em;
+    color: #000;
+    font-size: 15px;
+}
+
+.btn{
+    font-size: 30px;
+    padding: 8px 0;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    width: 100%;
+    background-color: #fbaf32;
+    color: white;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.btn:hover{
+    background: transparent;
+    color: black;
+    border: 2px solid #fbaf32;
+    font-size: 18px;
+}
